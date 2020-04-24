@@ -1,0 +1,19 @@
+minimum_cumulusci_version: '3.11.0'
+project:
+    name: sfdx-flow-components
+    package:
+        name:  sfdx-flow-components
+        api_version: '48.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/sfdx-flow-components/tests
+            options:
+                outputdir: robot/sfdx-flow-components/results
+
+    robot_testdoc:
+        options:
+            path: robot/sfdx-flow-components/tests
+            output: robot/sfdx-flow-components/doc/sfdx-flow-components_tests.html
