@@ -6,6 +6,7 @@
     <design:attribute name="class" label="CSS Class" description="default: slds-size_12-of-12" />
     <design:attribute name="padding" label="Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
     <design:attribute name="flowToLaunch" label="Flow to Launch (API Name)" description="Flow API Name" />
+    <design:attribute name="recordId" label="Flow Input: Record ID" />
     <design:attribute name="showFlowInModal" label="Show flow in modal dialog" />
     <design:attribute name="buttonFlowAction" label="Button Flow Action" description="NEXT, BACK, PAUSE, RESUME, FINISH" />    
 

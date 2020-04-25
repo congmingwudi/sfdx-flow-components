@@ -65,7 +65,7 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Test_Flow_Components</name>
+        <name>Flow_Components</name>
         <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>

@@ -21,16 +21,10 @@
             
             if (showFlowInModal) {
                 helper.openModal(component);
-            } else {
-                
+            } else {                
                 // show flow inline
                 component.set("v.showFlow", true);
-            
-       		    // find the view component (by aura:id) where the flow will be displayed
-        	    var flow = component.find('flowComponent');
-        
-        	    // start the flow by the flow Unique Name
-                flow.startFlow(flowToLaunch);
+                helper.showFlow(component, 'flowComponent');
             }
             
         } else if (buttonFlowAction) {
@@ -86,10 +80,6 @@
         }
         
     }, // end handleNavigation
-
-    openModal: function(component, event, helper) {
-        helper.openModal(component);
-    }, 
     
     closeModal: function(component, event, helper) {
         helper.closeModal(component);

@@ -1,14 +1,15 @@
-<aura:component description="RC_FlowButton" implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+<aura:component description="RC_FlowButton" implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
 	        
     <!-- input parameters -->
-    <aura:attribute name="buttonLabel" type="String" access="global" default="Enroll"/>
+    <aura:attribute name="buttonLabel" type="String" access="global" default="Create Contact"/>
     <aura:attribute name="variant" type="String" access="global" default="brand" description="base, neutral, brand, brand-outline, destructive, destructive-text, inverse, and success"/>
     <aura:attribute name="class" type="String" access="global" default="slds-size_12-of-12" description="css class"/>
     <aura:attribute name="padding" type="String" access="global" default="10px 10px 10px 10px" description="style padding: top right bottom left"/>
     <aura:attribute name="flowToLaunch" type="String" access="global"/>
+    <aura:attribute name="recordId" type="String" access="global"/> 
     <aura:attribute name="showFlowInModal" type="Boolean" access="global" default="false"/>
     <aura:attribute name="buttonFlowAction" type="String" access="global" default="NEXT"/> 
-    
+       
     <!-- output parameters -->
 	<aura:attribute name="buttonClicked" type="Boolean" access="global" default="false"/>    
     

@@ -10,7 +10,7 @@
             <name>Nav_Address_Info</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>nav_AddressInfo</leftValueReference>
+                <leftValueReference>nav_addressInfo</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -25,7 +25,7 @@
             <name>Nav_Create_Contact</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>nav_SubmitContact</leftValueReference>
+                <leftValueReference>nav_submit</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -73,6 +73,40 @@
         <connector>
             <targetReference>Decision_Navigation</targetReference>
         </connector>
+        <fields>
+            <name>screen1_account</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Contact</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>AccountId</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>contact.AccountId</assignToReference>
+                <name>recordId</name>
+            </outputParameters>
+        </fields>
         <fields>
             <name>screen1_Name</name>
             <extensionName>flowruntime:name</extensionName>
@@ -132,6 +166,34 @@
             </outputParameters>
         </fields>
         <fields>
+            <name>screen1_cancelButton</name>
+            <extensionName>c:RC_FlowButton</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>buttonLabel</name>
+                <value>
+                    <stringValue>Cancel</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>DESTRUCTIVE</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>class</name>
+                <value>
+                    <stringValue>slds-size_6-of-12</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>nav_cancel</assignToReference>
+                <name>buttonClicked</name>
+            </outputParameters>
+        </fields>
+        <fields>
             <name>screen1_addressInfoButton</name>
             <extensionName>c:RC_FlowButton</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -147,9 +209,15 @@
                     <stringValue>slds-size_6-of-12</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>BRAND-OUTLINE</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>nav_AddressInfo</assignToReference>
+                <assignToReference>nav_addressInfo</assignToReference>
                 <name>buttonClicked</name>
             </outputParameters>
         </fields>
@@ -169,9 +237,15 @@
                     <stringValue>slds-size_6-of-12</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>BRAND</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>nav_SubmitContact</assignToReference>
+                <assignToReference>nav_submit</assignToReference>
                 <name>buttonClicked</name>
             </outputParameters>
         </fields>
@@ -274,6 +348,12 @@
                     <stringValue>slds-size_6-of-12</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>BRAND</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -353,6 +433,12 @@
                     <stringValue>FINISH</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>SUCCESS</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -376,7 +462,7 @@
         <objectType>Contact</objectType>
     </variables>
     <variables>
-        <name>nav_AddressInfo</name>
+        <name>nav_addressInfo</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -386,7 +472,7 @@
         </value>
     </variables>
     <variables>
-        <name>nav_SubmitContact</name>
+        <name>nav_cancel</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -394,5 +480,22 @@
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>nav_submit</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
