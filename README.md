@@ -1,8 +1,17 @@
 # sfdx-flow-components
 
-Add a brief description of this project here, in Markdown format.
-It will be shown on the main page of the project's GitHub repository.
+----------
+## RC_FlowButton
 
+This is an Aura Lightning component button that when clicked can:
+
+1. Launch a Flow, inline or within a modal dialog.
+2. Or, if the button is within a Flow screen, handles the Flow navigation to replace the default footer buttons "Next", "Back", "Pause" and "Finish".
+
+Samples of using this component are in the **Flow Components** app and in the **RC_FlowButtonApp** Aura application.
+
+
+----------
 ## Development
 
 To work on this project in a scratch org:
