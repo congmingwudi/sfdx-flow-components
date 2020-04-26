@@ -12,9 +12,19 @@ Samples of using this component are in the **Flow Components** app and in the **
 
 ![Flow Components](docs/images/app-flowComponents1.png)
 
-![Flow Components](docs/images/app-flowComponents-flowInModal.png)
+![Launch Flow In Modal](docs/images/app-flowComponents-flowInModal.png)
 
-![Flow Components](docs/images/app-flowComponents-flowInline.png)
+![Launch Flow Inline](docs/images/app-flowComponents-flowInline.png)
+
+If the button is placed on a record detail page, the recordId will be passed to the Flow. 
+
+![Pass recordId from record detail page](docs/images/accountPage-createContact1.png)
+
+![Pass recordId from record detail page](docs/images/accountPage-createContact2.png)
+
+If the button is within a Flow screen, it can be used to customize the Flow navigation buttons such as "Next" and "Previous".
+
+![Flow navigation button](docs/images/flowScreen-next.png)
 
 
 ----------

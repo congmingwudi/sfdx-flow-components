@@ -150,22 +150,6 @@
             </outputParameters>
         </fields>
         <fields>
-            <name>screen1_Phone</name>
-            <extensionName>flowruntime:phone</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Phone (Mobile)</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>contact.MobilePhone</assignToReference>
-                <name>value</name>
-            </outputParameters>
-        </fields>
-        <fields>
             <name>screen1_cancelButton</name>
             <extensionName>c:RC_FlowButton</extensionName>
             <fieldType>ComponentInstance</fieldType>
