@@ -10,6 +10,9 @@ This is an Aura Lightning component button that when clicked can:
 
 Samples of using this component are in the **Flow Components** app and in the **RC_FlowButtonApp** Aura application.
 
+![Flow Components](docs/images/app-flowComponents1.png)
+
+
 
 ----------
 ## Development
