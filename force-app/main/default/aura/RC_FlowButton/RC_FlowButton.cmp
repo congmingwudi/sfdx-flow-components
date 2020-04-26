@@ -2,13 +2,14 @@
 	        
     <!-- input parameters -->
     <aura:attribute name="buttonLabel" type="String" access="global" default="Create Contact"/>
-    <aura:attribute name="variant" type="String" access="global" default="brand" description="base, neutral, brand, brand-outline, destructive, destructive-text, inverse, and success"/>
+    <aura:attribute name="variant" type="String" access="global" default="BRAND" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS"/>
     <aura:attribute name="class" type="String" access="global" default="slds-size_12-of-12" description="css class"/>
     <aura:attribute name="padding" type="String" access="global" default="10px 10px 10px 10px" description="style padding: top right bottom left"/>
-    <aura:attribute name="flowToLaunch" type="String" access="global"/>
-    <aura:attribute name="recordId" type="String" access="global"/> 
+    <aura:attribute name="flowToLaunch" type="String" access="global" description="Flow API Name. If empty, the button is used to fire the flow action."/>
+    <aura:attribute name="horizontalAlign" type="String" access="global" default="" description="center, space, spread, end" />
+    <aura:attribute name="recordId" type="String" access="global" description="recordId passed as input to the flow" /> 
     <aura:attribute name="showFlowInModal" type="Boolean" access="global" default="false"/>
-    <aura:attribute name="buttonFlowAction" type="String" access="global" default="NEXT"/> 
+    <aura:attribute name="buttonFlowAction" type="String" access="global" default="NEXT" description="NEXT, BACK, PAUSE, RESUME, and FINISH" /> 
        
     <!-- output parameters -->
 	<aura:attribute name="buttonClicked" type="Boolean" access="global" default="false"/>    
@@ -20,12 +21,12 @@
     
     <div class="{!v.class}" style="{! 'padding: ' + v.padding}">
         
-        <lightning:layout>
+        <lightning:layout horizontalAlign="{!v.horizontalAlign}">
             <lightning:layoutItem flexibility="grow">  
                 
                 <aura:if isTrue="{!v.showButton}">
                     <lightning:button label="{!v.buttonLabel}" 
-                        class="slds-size_12-of-12" 
+                        class="slds-size_12-of-12"
                         variant="{!v.variant}" onclick="{!c.handleNavigation}"/>
                 </aura:if>
                 
