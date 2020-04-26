@@ -12,6 +12,9 @@ Samples of using this component are in the **Flow Components** app and in the **
 
 ![Flow Components](docs/images/app-flowComponents1.png)
 
+![Flow Components](docs/images/app-flowComponents-flowInModal.png)
+
+![Flow Components](docs/images/app-flowComponents-flowInline.png)
 
 
 ----------
