@@ -1,4 +1,27 @@
 ({
+
+    init: function(component, event, helper) {
+
+        var buttonLabel = component.get("v.buttonLabel");
+        var launchFlowOnInit = component.get("v.launchFlowOnInit");
+        console.log('RC_FlowButtonController > init - buttonLabel: ' + buttonLabel + ', launchFlowOnInit: ' + launchFlowOnInit);
+
+        if (launchFlowOnInit) {
+            var showFlowInModal = component.get("v.showFlowInModal");
+
+            if (showFlowInModal) {
+                helper.openModal(component);
+            } else {                
+                // show flow inline
+                component.set("v.showFlow", true);
+                helper.showFlow(component, 'flowComponent');
+            }
+        } else {
+            // show button
+            component.set("v.showButton", true);
+        }
+
+    }, // end init
 	    
     handleNavigation : function(component, event, helper) {
         
@@ -33,11 +56,8 @@
                         + ', buttonFlowAction: ' + buttonFlowAction);
             
             // navigate in the flow
-            // for example, this does the same thing as the "Next" or "Previous" buttons in the standard flow footer    
-            var navigate = component.get("v.navigateFlow");
-            if (navigate) {
-                navigate(buttonFlowAction);
-            }          
+            helper.navigateFlow(component);
+                        
         } else {
         	console.log('RC_FlowButtonController > handleNavigation - button not configured to do anything');             
         }
@@ -47,13 +67,11 @@
 	handleStatusChange : function (component, event, helper) {
         
         var status = event.getParam("status");
-        console.log('RC_FlowButtonController > handleStatusChange - status: ' + status);   
-        
-        if(status == "FINISHED") {
+        component.set("v.flowStatus", status);
+        console.log('RC_FlowButtonController > handleStatusChange - status: ' + component.get("v.flowStatus"));
 
-            // show button
-            component.set("v.showButton", true);
-            
+        if(status == "FINISHED") {
+           
             // hide flow inline
             component.set("v.showFlow", false);
             
@@ -61,6 +79,20 @@
             console.log('RC_FlowButtonController > handleStatusChange - showFlowInModal: ' + showFlowInModal); 
             if (showFlowInModal) {
                 helper.closeModal(component);
+            }
+            
+            var doAction = component.get("v.doFlowActionWhenSubflowCompletes");
+            console.log('RC_FlowButtonController > handleStatusChange - doFlowActionWhenSubflowCompletes: ' + doAction); 
+            
+            if (doAction) {
+                
+                // navigate in the flow
+                helper.navigateFlow(component);
+
+            } else {
+            
+            	// show button
+            	component.set("v.showButton", true);
             }
             
             /**
@@ -82,7 +114,13 @@
     }, // end handleNavigation
     
     closeModal: function(component, event, helper) {
+
+        // close modal
         helper.closeModal(component);
-    },
+
+        // show button
+        component.set("v.showButton", true);
+
+    }, // end closeModal
     
 })

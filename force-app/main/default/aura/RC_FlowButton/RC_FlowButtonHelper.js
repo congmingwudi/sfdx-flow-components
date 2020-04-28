@@ -33,13 +33,19 @@
     closeModal: function(component) {
         console.log('RC_FlowButtonHelper > closeModal'); 
 
-        // close modal
-        component.set("v.modalIsOpen", false);
-
-        // show button
-        component.set("v.showButton", true);
+        component.set("v.modalIsOpen", false); 
 
     }, // end closeModal  
 
+    navigateFlow: function(component) {
+        var buttonFlowAction = component.get("v.buttonFlowAction");   
+
+        // navigate in the flow
+        // for example, this does the same thing as the "Next" or "Previous" buttons in the standard flow footer 
+        var navigate = component.get("v.navigateFlow");
+        if (navigate) {
+            navigate(buttonFlowAction);
+        }  
+    }
 
 })

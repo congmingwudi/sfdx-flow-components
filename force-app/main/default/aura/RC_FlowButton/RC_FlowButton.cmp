@@ -1,24 +1,34 @@
 <aura:component description="RC_FlowButton" implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
 	        
     <!-- input parameters -->
+
+    <!-- component styling -->
     <aura:attribute name="buttonLabel" type="String" access="global" default="Create Contact"/>
     <aura:attribute name="variant" type="String" access="global" default="BRAND" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS"/>
     <aura:attribute name="class" type="String" access="global" default="slds-size_12-of-12" description="css class"/>
     <aura:attribute name="padding" type="String" access="global" default="10px 10px 10px 10px" description="style padding: top right bottom left"/>
-    <aura:attribute name="flowToLaunch" type="String" access="global" description="Flow API Name. If empty, the button is used to fire the flow action."/>
     <aura:attribute name="horizontalAlign" type="String" access="global" default="" description="center, space, spread, end" />
+ 
+    <!-- component actions -->
+    <aura:attribute name="flowToLaunch" type="String" access="global" description="Flow API Name. If empty, the button is used to fire the flow action."/>
     <aura:attribute name="recordId" type="String" access="global" description="recordId passed as input to the flow" /> 
+    <aura:attribute name="launchFlowOnInit" type="Boolean" access="global" default="false" description="Launches the flow immediately when component is shown and hides the button."/>
     <aura:attribute name="showFlowInModal" type="Boolean" access="global" default="false"/>
-    <aura:attribute name="buttonFlowAction" type="String" access="global" default="NEXT" description="NEXT, BACK, PAUSE, RESUME, and FINISH" /> 
+    <aura:attribute name="buttonFlowAction" type="String" access="global" default="NEXT" description="NEXT, BACK, PAUSE, RESUME, and FINISH" />
+    <aura:attribute name="doFlowActionWhenSubflowCompletes" type="Boolean" access="global" default="false" /> 
        
     <!-- output parameters -->
-	<aura:attribute name="buttonClicked" type="Boolean" access="global" default="false"/>    
+    <aura:attribute name="buttonClicked" type="Boolean" access="global" default="false"/>
+    <aura:attribute name="flowStatus" type="String" access="global" default=""/>   
     
     <!-- private parameters -->
-    <aura:attribute name="showButton" type="Boolean" access="global" default="true"/>
+    <aura:attribute name="showButton" type="Boolean" access="global" default="false"/>
     <aura:attribute name="showFlow" type="Boolean" access="global" default="false"/>
     
-    
+    <!-- handlers -->
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+
+    <!-- MAIN COMPONENT -->    
     <div class="{!v.class}" style="{! 'padding: ' + v.padding}">
         
         <lightning:layout horizontalAlign="{!v.horizontalAlign}">
@@ -39,7 +49,9 @@
             </lightning:layoutItem>
         </lightning:layout>
             
-        </div>        
+    </div>
+    <!-- END MAIN COMPONENT --> 
+
     
  	<!-- MODAL DIALOG attributes --> 
     <aura:attribute name="modalIsOpen" type="boolean" default="false"/>
