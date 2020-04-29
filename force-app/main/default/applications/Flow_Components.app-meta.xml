@@ -4,7 +4,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Account_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Account</pageOrSobjectType>
@@ -13,7 +13,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Account_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Account</pageOrSobjectType>
@@ -28,8 +28,8 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Flow Components</label>
     <navType>Standard</navType>
-    <tabs>standard-Account</tabs>
     <tabs>Test_Flow_Button</tabs>
+    <tabs>standard-Account</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Flow_Components_UtilityBar</utilityBar>
 </CustomApplication>
