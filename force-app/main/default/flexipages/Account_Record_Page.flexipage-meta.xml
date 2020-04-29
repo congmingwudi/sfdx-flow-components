@@ -75,8 +75,16 @@
                 <value>slds-size_12-of-12</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
+                <name>doFlowActionWhenSubflowCompletes</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>flowToLaunch</name>
-                <value>Create_Contact</value>
+                <value>RC_Create_Contact</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>launchFlowOnInit</name>
+                <value>false</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>padding</name>
