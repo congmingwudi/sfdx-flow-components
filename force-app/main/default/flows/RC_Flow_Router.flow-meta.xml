@@ -5,7 +5,7 @@
         <choiceText>Create Contact</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Create_Contact</stringValue>
+            <stringValue>RC_Create_Contact</stringValue>
         </value>
     </choices>
     <choices>
@@ -13,7 +13,7 @@
         <choiceText>Create Task</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Create_Task</stringValue>
+            <stringValue>RC_Create_Task</stringValue>
         </value>
     </choices>
     <decisions>
@@ -143,7 +143,7 @@
             <targetReference>Choose_Subflow</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>subflowStatus</name>
         <dataType>String</dataType>
