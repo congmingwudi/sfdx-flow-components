@@ -95,7 +95,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>showFlowInModal</name>
-                <value>true</value>
+                <value>false</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>variant</name>

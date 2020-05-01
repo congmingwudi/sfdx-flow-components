@@ -6,9 +6,33 @@
 This is an Aura Lightning component button that when clicked can:
 
 1. Launch a Flow, inline or within a modal dialog.
-2. Or, if the button is within a Flow screen, handles the Flow navigation to replace the default footer buttons "Next", "Back", "Pause" and "Finish".
 
-Samples of using this component are in the **Flow Components** app and in the **RC_FlowButtonApp** Aura application.
+Within another Lightning component: 
+
+`<c:RC_FlowButton buttonLabel="Submit" variant="BRAND" 
+                     flowToLaunch="Create_Contact"
+                     showFlowInModal="true"
+                     />`
+
+On a Lightning page: 
+
+![RC_FlowButtonApp](docs/images/lightningPage-flowButton.png)
+
+
+2. If the button is within a Flow screen, it handles the Flow navigation to replace the default footer buttons "Next", "Back", "Pause" and "Finish".
+
+![Flow navigation button](docs/images/flowScreen-next.png)
+
+![Flow navigation buttons](docs/images/createContactScreen.png)
+
+3. If the button is within a Flow screen, it can also be used to automatically launch a subflow without displaying the button at all. Then when the subflow is completed, one of the flow actions ("Next", "Finish") is performed to continue the parent flow.
+
+![Flow Router - Subflow Screen](docs/images/flowRouter-subflowScreen.png)
+
+
+Samples of using this component are in the **RC_FlowButtonApp** Aura application and **Flow Components** app.
+
+![RC_FlowButtonApp](docs/images/RC_FlowButtonApp.png)
 
 ![Flow Components](docs/images/app-flowComponents1.png)
 
@@ -22,9 +46,22 @@ If the button is placed on a record detail page, the recordId will be passed to 
 
 ![Pass recordId from record detail page](docs/images/accountPage-createContact-2.png)
 
-If the button is within a Flow screen, it can be used to customize the Flow navigation buttons such as "Next" and "Previous".
 
-![Flow navigation button](docs/images/flowScreen-next.png)
+Dynamically launch subflows. Two example flows for doing this are the "Flow Router" and "Case Status Router".
+
+![Flow Router](docs/images/flows.png)
+
+![Flow Router](docs/images/flowBuilder-flowRouter.png)
+
+![Flow Router](docs/images/flowRouter.png)
+
+The "Case Status Router" flow is configured on the Case record page. 
+
+![Case Status Router](docs/images/flowComponents-caseStatusRouter.png)
+
+![Case Status Router](docs/images/flowBuilder-caseStatusRouter.png)
+
+![Case Status Router](docs/images/caseStatusRouter.png)
 
 
 ----------

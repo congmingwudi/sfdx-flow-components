@@ -191,6 +191,12 @@
                     <stringValue>Work Case</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>class</name>
+                <value>
+                    <stringValue>slds-size_6-of-12</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>workButtonClicked</assignToReference>
@@ -207,6 +213,12 @@
                     <stringValue>Escalate Case</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>class</name>
+                <value>
+                    <stringValue>slds-size_6-of-12</stringValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>escalateButtonClicked</assignToReference>
@@ -221,6 +233,12 @@
                 <name>buttonLabel</name>
                 <value>
                     <stringValue>Close</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>class</name>
+                <value>
+                    <stringValue>slds-size_6-of-12</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -290,7 +308,7 @@
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>case</name>
         <dataType>SObject</dataType>

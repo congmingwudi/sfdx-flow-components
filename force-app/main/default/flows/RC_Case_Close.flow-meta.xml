@@ -45,6 +45,9 @@
         <label>Update Case Status</label>
         <locationX>402</locationX>
         <locationY>50</locationY>
+        <connector>
+            <targetReference>screen2</targetReference>
+        </connector>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -112,13 +115,53 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>finishButton</name>
+            <name>nextButton</name>
             <extensionName>c:RC_FlowButton</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonFlowAction</name>
                 <value>
                     <stringValue>NEXT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttonLabel</name>
+                <value>
+                    <stringValue>Change Status</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>SUCCESS</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>screen2</name>
+        <label>Status Changed</label>
+        <locationX>530</locationX>
+        <locationY>50</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>confirmationMsg</name>
+            <fieldText>&lt;p&gt;Case Status Changed To: &lt;b&gt;{!caseStatusToSet}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>finishButton</name>
+            <extensionName>c:RC_FlowButton</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>buttonFlowAction</name>
+                <value>
+                    <stringValue>FINISH</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>

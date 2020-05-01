@@ -45,6 +45,9 @@
         <label>Update Case Status</label>
         <locationX>402</locationX>
         <locationY>50</locationY>
+        <connector>
+            <targetReference>screen2</targetReference>
+        </connector>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -111,7 +114,71 @@
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
         </fields>
-        <showFooter>true</showFooter>
+        <fields>
+            <name>nextButton</name>
+            <extensionName>c:RC_FlowButton</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>buttonLabel</name>
+                <value>
+                    <stringValue>Set Status</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>SUCCESS</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>screen2</name>
+        <label>Status Changed</label>
+        <locationX>536</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>confirmationMsg</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Case Status Changed To: &lt;/span&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!caseStatusToSet}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>finishButton</name>
+            <extensionName>c:RC_FlowButton</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>buttonClicked</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttonFlowAction</name>
+                <value>
+                    <stringValue>FINISH</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttonLabel</name>
+                <value>
+                    <stringValue>Finish</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>SUCCESS</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>false</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>

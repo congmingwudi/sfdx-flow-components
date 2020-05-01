@@ -50,6 +50,13 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>force:detailPanel</componentName>
+        </componentInstances>
+        <name>Facet-dca30bee-66bd-4e69-b39f-a09b79c35723</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>active</name>
                 <value>true</value>
@@ -75,6 +82,17 @@
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>Facet-dca30bee-66bd-4e69-b39f-a09b79c35723</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Standard.Tab.detail</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>tabs</name>
         <type>Facet</type>
@@ -93,34 +111,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>force:detailPanel</componentName>
-        </componentInstances>
-        <mode>Replace</mode>
-        <name>detailTabContent</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>active</name>
-                <value>true</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>body</name>
-                <value>detailTabContent</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Standard.Tab.detail</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <mode>Replace</mode>
-        <name>sidebartabs</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>flowArguments</name>
                 <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;value&quot;:null,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;selected&quot;:false}]</value>
@@ -134,13 +124,6 @@
                 <value>RC_Case_Status_Router</value>
             </componentInstanceProperties>
             <componentName>flowruntime:interview</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>tabs</name>
-                <value>sidebartabs</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tabset</componentName>
         </componentInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
