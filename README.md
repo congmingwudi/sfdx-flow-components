@@ -25,6 +25,8 @@ On a Lightning page:
 
 ![Flow navigation buttons](docs/images/createContactScreen.png)
 
+![Flow navigation buttons](docs/images/createContactScreen-output.png)
+
 3. If the button is within a Flow screen, it can also be used to automatically launch a subflow without displaying the button at all. Then when the subflow is completed, one of the flow actions ("Next", "Finish") is performed to continue the parent flow.
 
 ![Flow Router - Subflow Screen](docs/images/flowRouter-subflowScreen.png)
