@@ -23,7 +23,9 @@ On a Lightning page:
 
 ![Flow navigation button](docs/images/flowScreen-next.png)
 
-![Flow navigation buttons](docs/images/createContactScreen.png)
+![Flow navigation button](docs/images/createContactScreen-hideFooter.png)
+
+![Flow navigation buttons](docs/images/createContactScreen-customNavButtons.png)
 
 ![Flow navigation buttons](docs/images/createContactScreen-output.png)
 
