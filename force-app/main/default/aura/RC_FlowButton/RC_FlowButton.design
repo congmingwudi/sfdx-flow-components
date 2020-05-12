@@ -5,9 +5,10 @@
     <!-- component styling -->
 	<design:attribute name="buttonLabel" label="Button Label" />
     <design:attribute name="variant" label="Button Variant" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS" />
-    <design:attribute name="class" label="CSS class" description="default: slds-size_12-of-12" />
+    <design:attribute name="class" label="Component CSS class" description="Component CSS class (default: slds-size_12-of-12). If this component launches an inline flow, this class will control the area that contains the flow. " />
     <design:attribute name="padding" label="Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
     <design:attribute name="horizontalAlign" label="Horizontal Align" description="center, space, spread, end"/>
+    <design:attribute name="buttonClass" label="Button CSS class" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
     
     <!-- component actions -->
     <design:attribute name="flowToLaunch" label="Flow to Launch (API Name)" description="Flow API Name. If empty, the button is used to fire the flow action." />

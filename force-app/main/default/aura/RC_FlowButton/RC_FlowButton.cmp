@@ -5,9 +5,10 @@
     <!-- component styling -->
     <aura:attribute name="buttonLabel" type="String" access="global" default="Create Contact"/>
     <aura:attribute name="variant" type="String" access="global" default="BRAND" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS"/>
-    <aura:attribute name="class" type="String" access="global" default="slds-size_12-of-12" description="css class"/>
+    <aura:attribute name="class" type="String" access="global" default="slds-size_12-of-12" description="component css class. If this component launches an inline flow, this class will control the area that contains the flow."/>
     <aura:attribute name="padding" type="String" access="global" default="10px 10px 10px 10px" description="style padding: top right bottom left"/>
     <aura:attribute name="horizontalAlign" type="String" access="global" default="" description="center, space, spread, end" />
+    <aura:attribute name="buttonClass" type="String" access="global" default="" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
  
     <!-- component actions -->
     <aura:attribute name="flowToLaunch" type="String" access="global" description="Flow API Name. If empty, the button is used to fire the flow action."/>
@@ -36,8 +37,9 @@
                 
                 <aura:if isTrue="{!v.showButton}">
                     <lightning:button label="{!v.buttonLabel}" 
-                        class="slds-size_12-of-12"
-                        variant="{!v.variant}" onclick="{!c.handleNavigation}"/>
+                                      class="{!v.buttonClass}"
+                                      variant="{!v.variant}" 
+                                      onclick="{!c.handleNavigation}"/>
                 </aura:if>
                 
                 <aura:if isTrue="{!v.showFlow}">

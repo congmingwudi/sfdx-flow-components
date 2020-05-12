@@ -14,6 +14,10 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
+                <name>buttonClass</name>
+                <value>slds-size_6-of-12</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>buttonClicked</name>
                 <value>false</value>
             </componentInstanceProperties>
@@ -71,6 +75,10 @@
             <componentName>flexipage:richText</componentName>
         </componentInstances>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>buttonClass</name>
+                <value>slds-size_12-of-12</value>
+            </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>buttonClicked</name>
                 <value>false</value>

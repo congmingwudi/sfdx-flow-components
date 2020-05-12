@@ -59,6 +59,10 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>buttonClass</name>
+                <value>slds-size_12-of-12</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>buttonClicked</name>
                 <value>false</value>
             </componentInstanceProperties>
@@ -99,7 +103,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>variant</name>
-                <value>brand</value>
+                <value>BRAND</value>
             </componentInstanceProperties>
             <componentName>RC_FlowButton</componentName>
         </componentInstances>
